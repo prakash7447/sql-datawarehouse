@@ -1,0 +1,15 @@
+--quality check, recheck the data again
+
+select cst_id,count(*)
+from silver.crm_cust_info
+group by cst_id
+having count(*)>1
+
+select cst_firstname from silver.crm_cust_info
+where cst_firstname is null;
+
+select cst_lastname from silver.crm_cust_info
+where cst_lastname is null;
+
+select cst_lastname from silver.crm_cust_info
+where cst_lastname != trim(cst_lastname);
