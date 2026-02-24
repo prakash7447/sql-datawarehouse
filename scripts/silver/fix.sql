@@ -131,3 +131,9 @@ when trim(cntry) ='' or cntry is null then 'n/a'
 else trim(cntry)
 end as cntry
 from bronze.erp_loc_a101
+
+
+--inserting into silver schema table
+
+insert into silver.erp_px_cat_g1v2
+select * from bronze.erp_px_cat_g1v2
