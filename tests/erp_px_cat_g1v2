@@ -1,0 +1,14 @@
+
+--lets see if the id from erp_px_cat_g1v2 is same as cat_id in crm_prd_info
+
+select * from bronze.erp_px_cat_g1v2
+
+select * from silver.crm_prd_info
+--BOTH ID S look same
+
+select * from bronze.erp_px_cat_g1v2
+where cat != trim(cat) or subcat!= trim(subcat)
+
+--lets see the values of maintaince
+
+select distinct maintenance from bronze.erp_px_cat_g1v2
